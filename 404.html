@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page not found — EspireTech</title>
+    <meta name="robots" content="noindex">
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px 20px;
+        font-family: "Segoe UI", sans-serif;
+        background: #f4f8fc;
+        color: #102033;
+      }
+      main {
+        width: min(560px, 100%);
+        background: #fff;
+        border: 1px solid rgba(1, 44, 112, 0.12);
+        border-radius: 28px;
+        padding: 40px 32px;
+        box-shadow: 0 24px 60px rgba(7, 21, 39, 0.08);
+      }
+      p { line-height: 1.6; }
+      .mark {
+        margin: 0 0 12px;
+        font-size: 1.4rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: #012c70;
+      }
+      .mark span { color: #0a97e4; }
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        color: #01244d;
+      }
+      a {
+        display: inline-block;
+        margin-top: 8px;
+        background: #012c70;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 12px 18px;
+      }
+      a:focus-visible { outline: 3px solid #0a97e4; outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="mark">Espire<span>Tech</span></p>
+      <h1>That page is not here.</h1>
+      <p>The link may be out of date. Head back to the homepage to keep browsing.</p>
+      <p><a id="home-link" href="/">Back to EspireTech</a></p>
+    </main>
+    <script>
+      // Leave empty for a user site (username.github.io) or a custom domain.
+      // For a project site (username.github.io/repo-name/), set the repository name.
+      var projectRepo = "EspireTech";
+      var home = projectRepo ? "/" + projectRepo.replace(/^\/|\/$/g, "") + "/" : "/";
+      if (location.hostname === "localhost" || location.hostname === "127.0.0.1") home = "/";
+      document.getElementById("home-link").setAttribute("href", home);
+    </script>
+  </body>
+</html>
