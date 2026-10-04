@@ -166,6 +166,13 @@
       setError(form.email, "");
     }
 
+    if (!form.need.value) {
+      setError(form.need, "Choose the kind of work you need.");
+      valid = false;
+    } else {
+      setError(form.need, "");
+    }
+
     if (message.length < 12) {
       setError(form.message, "Add a few more words so we know what you need.");
       valid = false;
@@ -182,6 +189,7 @@
 
     var body = "Name: " + name + "\nEmail: " + from + "\n";
     if (organization) body += "Organization: " + organization + "\n";
+    body += "Need: " + form.need.value + "\n";
     body += "\n" + message;
 
     var subject = "Project inquiry from " + name;
